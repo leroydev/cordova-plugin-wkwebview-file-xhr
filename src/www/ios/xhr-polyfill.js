@@ -671,12 +671,14 @@
     {
       reqContext.status = 0;
       reqContext.statusText = reqContext.responseText = null;
+      reqContext.responseURL = reqContext.url;
     }
     else
     {
       reqContext.status = 400;
       reqContext.statusText = "Bad Request";
       reqContext.responseText = error;
+      reqContext.responseURL = reqContext.url;
     }
 
     reqContext.dispatchReadyStateChangeEvent(2); //HEADERS_RECEIVED
